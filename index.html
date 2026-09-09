@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es-CR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Calendario Académico TEC</title>
+<meta name="description" content="Semanas lectivas, exámenes y entrega de actas del Calendario Institucional del TEC.">
+<meta name="theme-color" content="#0b3d91">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/icon-192.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="brand">
+    <svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true">
+      <rect x="3" y="5" width="18" height="16" rx="3"></rect>
+      <line x1="3" y1="10" x2="21" y2="10"></line>
+      <line x1="8" y1="3" x2="8" y2="7"></line>
+      <line x1="16" y1="3" x2="16" y2="7"></line>
+    </svg>
+    <div>
+      <h1>Calendario TEC</h1>
+      <p class="brand-sub" id="brandSub">Calendario Institucional y Académico</p>
+    </div>
+  </div>
+
+  <div class="selector">
+    <label class="sr-only" for="selAnio">Año</label>
+    <select id="selAnio"></select>
+    <label class="sr-only" for="selPeriodo">Periodo</label>
+    <select id="selPeriodo"></select>
+    <button id="btnHoy" class="ghost" title="Ir al periodo de hoy">Hoy</button>
+    <button id="btnTema" class="ghost icon" title="Cambiar tema" aria-label="Cambiar tema">◐</button>
+  </div>
+</header>
+
+<nav class="tabs" role="tablist">
+  <button class="tab activa" data-vista="resumen" role="tab">Resumen</button>
+  <button class="tab" data-vista="semanas" role="tab">Semanas</button>
+  <button class="tab" data-vista="calendario" role="tab">Calendario</button>
+  <button class="tab" data-vista="ajustes" role="tab">Ajustes</button>
+</nav>
+
+<main>
+  <!-- ───────── RESUMEN ───────── -->
+  <section id="vista-resumen" class="vista activa">
+    <div id="tarjetaHoy" class="hoy"></div>
+    <div id="avisoPeriodo" class="aviso oculto"></div>
+
+    <h2 class="titulo-seccion">Fechas clave</h2>
+    <div id="fechasClave" class="grid-clave"></div>
+
+    <div id="notaDerivados" class="nota-fuente"></div>
+  </section>
+
+  <!-- ───────── SEMANAS ───────── -->
+  <section id="vista-semanas" class="vista">
+    <div id="listaSemanas" class="semanas"></div>
+  </section>
+
+  <!-- ───────── CALENDARIO ───────── -->
+  <section id="vista-calendario" class="vista">
+    <div id="leyenda" class="leyenda"></div>
+    <div id="meses" class="meses"></div>
+  </section>
+
+  <!-- ───────── AJUSTES ───────── -->
+  <section id="vista-ajustes" class="vista">
+
+    <div class="panel">
+      <h2>Actualizar el calendario</h2>
+      <p class="ayuda">
+        Cuando el TEC publique un calendario nuevo, la app puede tomarlo de un archivo
+        <code>calendario-tec.json</code> publicado en una dirección web (por ejemplo GitHub Pages o un Gist).
+        Pegue aquí esa dirección y presione <em>Buscar actualizaciones</em>.
+      </p>
+      <div class="fila">
+        <input type="url" id="urlRemota" placeholder="https://usuario.github.io/calendario-tec/calendario-tec.json" spellcheck="false">
+        <button id="btnBuscarAct" class="primario">Buscar actualizaciones</button>
+      </div>
+      <label class="check">
+        <input type="checkbox" id="autoActualizar"> Buscar actualizaciones automáticamente al abrir la app
+      </label>
+      <p id="estadoAct" class="estado"></p>
+      <dl class="meta">
+        <dt>Versión de datos</dt><dd id="metaVersion">—</dd>
+        <dt>Actualizado</dt><dd id="metaActualizado">—</dd>
+        <dt>Fuente</dt><dd id="metaFuente">—</dd>
+        <dt>Última revisión</dt><dd id="metaRevision">nunca</dd>
+      </dl>
+    </div>
+
+    <div class="panel">
+      <h2>Editar periodos</h2>
+      <p class="ayuda">
+        También puede agregar o corregir un periodo a mano, sin depender de ninguna descarga.
+        Los cambios se guardan solo en este dispositivo.
+      </p>
+      <div class="fila">
+        <label class="sr-only" for="selEditar">Periodo a editar</label>
+        <select id="selEditar"></select>
+        <button id="btnNuevoPeriodo" class="ghost">Nuevo periodo</button>
+        <button id="btnBorrarPeriodo" class="ghost peligro">Eliminar</button>
+      </div>
+
+      <form id="formPeriodo" class="form-periodo">
+        <div class="campos">
+          <label>Nombre<input name="nombre" required placeholder="I Semestre 2027"></label>
+          <label>Etiqueta corta<input name="corto" required placeholder="I-2027"></label>
+          <label>Año<input name="anio" type="number" min="2000" max="2100" required></label>
+          <label>Orden en el año<input name="orden" type="number" min="1" max="9" required></label>
+          <label>Tipo
+            <select name="tipo">
+              <option value="semestre">Semestre</option>
+              <option value="verano">Verano</option>
+              <option value="otro">Otro</option>
+            </select>
+          </label>
+          <label>Semanas lectivas esperadas<input name="semanasEsperadas" type="number" min="1" max="52"></label>
+          <label>Inicio del periodo lectivo<input name="lectivoInicio" type="date" required></label>
+          <label>Fin del periodo lectivo<input name="lectivoFin" type="date" required></label>
+        </div>
+
+        <h3>Semanas no lectivas (recesos)</h3>
+        <div id="listaRecesos" class="sublista"></div>
+        <button type="button" id="btnAddReceso" class="ghost pequeno">+ Agregar receso</button>
+
+        <h3>Hitos</h3>
+        <div id="listaHitos" class="sublista"></div>
+        <button type="button" id="btnAddHito" class="ghost pequeno">+ Agregar hito</button>
+
+        <div class="acciones">
+          <button type="submit" class="primario">Guardar periodo</button>
+          <span id="estadoForm" class="estado"></span>
+        </div>
+      </form>
+    </div>
+
+    <div class="panel">
+      <h2>Copia de seguridad</h2>
+      <div class="fila">
+        <button id="btnExportar" class="ghost">Exportar datos (.json)</button>
+        <button id="btnImportar" class="ghost">Importar datos…</button>
+        <button id="btnRestaurar" class="ghost peligro">Restaurar datos originales</button>
+        <input type="file" id="archivoImportar" accept="application/json,.json" hidden>
+      </div>
+      <p id="estadoBackup" class="estado"></p>
+    </div>
+
+    <div class="panel">
+      <h2>Instalar la aplicación</h2>
+      <p class="ayuda" id="ayudaInstalar">
+        En Windows y Linux: abra esta página en Chrome, Edge o Brave y use el ícono de instalar
+        de la barra de direcciones. En Android: menú ⋮ → <em>Instalar aplicación</em>.
+        Una vez instalada funciona sin conexión.
+      </p>
+      <button id="btnInstalar" class="primario oculto">Instalar ahora</button>
+      <p class="ayuda" id="estadoSW"></p>
+    </div>
+
+  </section>
+</main>
+
+<footer class="pie">
+  <span>Datos del Calendario Institucional y Académico del TEC.</span>
+  <a id="enlaceFuente" href="https://www.tec.ac.cr/calendario-institucional-academico" target="_blank" rel="noopener">Ver calendario oficial ↗</a>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>

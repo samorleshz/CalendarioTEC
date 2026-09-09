@@ -1,0 +1,149 @@
+{
+  "esquema": 1,
+  "version": "2026.09.09",
+  "actualizado": "2026-09-09",
+  "fuente": "https://www.tec.ac.cr/semestre-verano",
+  "notas": "Fechas tomadas del Calendario Institucional y Académico del TEC (VIESA – Departamento de Admisión y Registro). Los hitos marcados como \"derivado\" no aparecen textualmente en el calendario oficial: el TEC publica un único bloque «Evaluaciones y actividades finales»; la división en semana de finales y semana de reposición/ampliación es la interpretación habitual y se muestra solo como referencia.",
+  "vacaciones": [
+    { "inicio": "2026-03-30", "fin": "2026-04-01", "nombre": "Vacaciones de Semana Santa" },
+    { "inicio": "2026-07-06", "fin": "2026-07-17", "nombre": "Vacaciones de medio año" },
+    { "inicio": "2026-12-21", "fin": "2027-01-15", "nombre": "Vacaciones de fin y principio de año" }
+  ],
+  "feriados": [
+    { "fecha": "2025-01-01", "nombre": "Año Nuevo" },
+    { "fecha": "2025-04-11", "nombre": "Batalla de Rivas (Juan Santamaría)" },
+    { "fecha": "2025-04-17", "nombre": "Jueves Santo" },
+    { "fecha": "2025-04-18", "nombre": "Viernes Santo" },
+    { "fecha": "2025-05-01", "nombre": "Día Internacional del Trabajo" },
+    { "fecha": "2025-07-25", "nombre": "Anexión del Partido de Nicoya" },
+    { "fecha": "2025-08-02", "nombre": "Virgen de los Ángeles" },
+    { "fecha": "2025-08-15", "nombre": "Día de la Madre" },
+    { "fecha": "2025-08-31", "nombre": "Día de la Persona Negra y la Cultura Afrocostarricense" },
+    { "fecha": "2025-09-15", "nombre": "Independencia Nacional" },
+    { "fecha": "2025-12-01", "nombre": "Abolición del Ejército" },
+    { "fecha": "2025-12-25", "nombre": "Navidad" },
+    { "fecha": "2026-01-01", "nombre": "Año Nuevo" },
+    { "fecha": "2026-04-02", "nombre": "Jueves Santo" },
+    { "fecha": "2026-04-03", "nombre": "Viernes Santo" },
+    { "fecha": "2026-04-11", "nombre": "Batalla de Rivas (Juan Santamaría)" },
+    { "fecha": "2026-05-01", "nombre": "Día Internacional del Trabajo" },
+    { "fecha": "2026-07-25", "nombre": "Anexión del Partido de Nicoya" },
+    { "fecha": "2026-08-01", "nombre": "Virgen de los Ángeles" },
+    { "fecha": "2026-08-02", "nombre": "Virgen de los Ángeles" },
+    { "fecha": "2026-08-15", "nombre": "Día de la Madre" },
+    { "fecha": "2026-08-31", "nombre": "Día de la Persona Negra y la Cultura Afrocostarricense" },
+    { "fecha": "2026-09-15", "nombre": "Independencia Nacional" },
+    { "fecha": "2026-12-01", "nombre": "Abolición del Ejército" },
+    { "fecha": "2026-12-25", "nombre": "Navidad" },
+    { "fecha": "2027-01-01", "nombre": "Año Nuevo" }
+  ],
+  "periodos": [
+    {
+      "id": "2025-1",
+      "anio": 2025,
+      "orden": 1,
+      "tipo": "semestre",
+      "nombre": "I Semestre 2025",
+      "corto": "I-2025",
+      "semanasEsperadas": 16,
+      "lectivo": { "inicio": "2025-02-17", "fin": "2025-06-13" },
+      "recesos": [
+        { "inicio": "2025-04-14", "fin": "2025-04-18", "nombre": "Semana Santa" }
+      ],
+      "hitos": [
+        { "clave": "preparacion", "nombre": "Preparación para evaluaciones y actividades finales", "inicio": "2025-06-16", "fin": "2025-06-20" },
+        { "clave": "evaluaciones", "nombre": "Evaluaciones y actividades finales", "inicio": "2025-06-23", "fin": "2025-07-03" },
+        { "clave": "finales", "nombre": "Semana de exámenes finales", "inicio": "2025-06-23", "fin": "2025-06-27", "derivado": true },
+        { "clave": "reposicion", "nombre": "Semana de reposición / ampliación", "inicio": "2025-06-30", "fin": "2025-07-03", "derivado": true },
+        { "clave": "actas", "nombre": "Entrega de actas", "inicio": "2025-06-16", "fin": "2025-07-03" }
+      ]
+    },
+    {
+      "id": "2025-2",
+      "anio": 2025,
+      "orden": 2,
+      "tipo": "semestre",
+      "nombre": "II Semestre 2025",
+      "corto": "II-2025",
+      "semanasEsperadas": 16,
+      "lectivo": { "inicio": "2025-08-04", "fin": "2025-11-21" },
+      "recesos": [],
+      "hitos": [
+        { "clave": "preparacion", "nombre": "Preparación para evaluaciones y actividades finales", "inicio": "2025-11-24", "fin": "2025-11-28" },
+        { "clave": "evaluaciones", "nombre": "Evaluaciones y actividades finales", "inicio": "2025-12-02", "fin": "2025-12-11" },
+        { "clave": "finales", "nombre": "Semana de exámenes finales", "inicio": "2025-12-02", "fin": "2025-12-05", "derivado": true },
+        { "clave": "reposicion", "nombre": "Semana de reposición / ampliación", "inicio": "2025-12-08", "fin": "2025-12-11", "derivado": true },
+        { "clave": "actas", "nombre": "Entrega de actas", "inicio": "2025-11-24", "fin": "2025-12-11" }
+      ]
+    },
+    {
+      "id": "2025-3",
+      "anio": 2025,
+      "orden": 3,
+      "tipo": "verano",
+      "nombre": "Verano 2025-2026",
+      "corto": "V-2025",
+      "semanasEsperadas": 6,
+      "lectivo": { "inicio": "2025-12-16", "fin": "2026-01-30" },
+      "recesos": [],
+      "hitos": [
+        { "clave": "evaluaciones", "nombre": "Evaluaciones y actividades finales", "inicio": "2026-02-02", "fin": "2026-02-05" },
+        { "clave": "actas", "nombre": "Entrega de actas", "inicio": "2026-02-02", "fin": "2026-02-05" }
+      ]
+    },
+    {
+      "id": "2026-1",
+      "anio": 2026,
+      "orden": 1,
+      "tipo": "semestre",
+      "nombre": "I Semestre 2026",
+      "corto": "I-2026",
+      "semanasEsperadas": 16,
+      "lectivo": { "inicio": "2026-02-16", "fin": "2026-06-13" },
+      "recesos": [
+        { "inicio": "2026-03-30", "fin": "2026-04-03", "nombre": "Semana Santa" }
+      ],
+      "hitos": [
+        { "clave": "publicacion", "nombre": "Publicación de actas de calificaciones para registro de notas", "inicio": "2026-06-12", "fin": "2026-06-12" },
+        { "clave": "preparacion", "nombre": "Preparación para evaluaciones y actividades finales", "inicio": "2026-06-15", "fin": "2026-06-20" },
+        { "clave": "evaluaciones", "nombre": "Evaluaciones y actividades finales", "inicio": "2026-06-22", "fin": "2026-07-02" },
+        { "clave": "finales", "nombre": "Semana de exámenes finales", "inicio": "2026-06-22", "fin": "2026-06-27", "derivado": true },
+        { "clave": "reposicion", "nombre": "Semana de reposición / ampliación", "inicio": "2026-06-29", "fin": "2026-07-02", "derivado": true },
+        { "clave": "actas", "nombre": "Entrega de actas", "inicio": "2026-06-15", "fin": "2026-07-02" }
+      ]
+    },
+    {
+      "id": "2026-2",
+      "anio": 2026,
+      "orden": 2,
+      "tipo": "semestre",
+      "nombre": "II Semestre 2026",
+      "corto": "II-2026",
+      "semanasEsperadas": 16,
+      "lectivo": { "inicio": "2026-08-03", "fin": "2026-11-21" },
+      "recesos": [],
+      "hitos": [
+        { "clave": "preparacion", "nombre": "Preparación para evaluaciones y actividades finales", "inicio": "2026-11-23", "fin": "2026-11-28" },
+        { "clave": "evaluaciones", "nombre": "Evaluaciones y actividades finales", "inicio": "2026-11-30", "fin": "2026-12-10" },
+        { "clave": "finales", "nombre": "Semana de exámenes finales", "inicio": "2026-11-30", "fin": "2026-12-05", "derivado": true },
+        { "clave": "reposicion", "nombre": "Semana de reposición / ampliación", "inicio": "2026-12-07", "fin": "2026-12-10", "derivado": true },
+        { "clave": "actas", "nombre": "Entrega de actas", "inicio": "2026-11-23", "fin": "2026-12-10" }
+      ]
+    },
+    {
+      "id": "2026-3",
+      "anio": 2026,
+      "orden": 3,
+      "tipo": "verano",
+      "nombre": "Verano 2026-2027",
+      "corto": "V-2026",
+      "semanasEsperadas": 6,
+      "lectivo": { "inicio": "2026-12-15", "fin": "2027-01-30" },
+      "recesos": [],
+      "hitos": [
+        { "clave": "evaluaciones", "nombre": "Evaluaciones y actividades finales", "inicio": "2027-02-01", "fin": "2027-02-04" },
+        { "clave": "actas", "nombre": "Entrega de actas", "inicio": "2027-02-01", "fin": "2027-02-04" }
+      ]
+    }
+  ]
+}
